@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Welcome Araa ✨</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fce7f3, #e0f2fe, #ede9fe);
+  }
+  .welcome {
+    background: rgba(255,255,255,0.9);
+    padding: 50px 30px;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    text-align: center;
+    max-width: 450px;
+    animation: fadeIn 1.2s ease-in-out;
+    position: relative;
+  }
+  h1 {
+    font-size: 30px;
+    margin: 0;
+    color: #ec4899;
+    animation: bounce 2s infinite;
+  }
+  .btn {
+    display: inline-block;
+    padding: 15px 26px;
+    border-radius: 14px;
+    background: #ec4899;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    box-shadow: 0 6px 18px rgba(236,72,153,0.3);
+    transition: 0.2s;
+    animation: pulse 1.5s infinite;
+  }
+  .btn:hover {
+    background: #db2777;
+    transform: scale(1.08);
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0);}
+    50% { transform: translateY(-8px);}
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(236,72,153,0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(236,72,153,0); }
+    100% { box-shadow: 0 0 0 0 rgba(236,72,153,0); }
+  }
+
+  /* bintang lucu */
+  .cute-star {
+    font-size: 80px;
+    display: inline-block;
+    animation: wave 2s infinite ease-in-out;
+  }
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+  }
+</style>
+</head>
+<body>
+  <div class="welcome">
+    <h1>Halo Sayangg! 🌸</h1>
+
+    <!-- bintang lucu -->
+    <div class="cute-star">⭐️</div>
+
+    <p>Dari Al, cowonya Araa yang ganteng, tidak sombong, baik hati, dan suka menolong✨</p>
+    <a href="araa_sempro_card.html" class="btn">💖 Klik ini sayangggggg 💖</a>
+  </div>
+  <!-- ⭐ efek bintang jatuh -->
+<script>
+  function createStar() {
+    const star = document.createElement("div");
+    star.classList.add("star");
+    document.body.appendChild(star);
+
+    // posisi random dari kiri layar
+    star.style.left = Math.random() * window.innerWidth + "px";
+
+    // durasi jatuh random
+    const duration = Math.random() * 3 + 3; // 3 - 6 detik
+    star.style.animationDuration = duration + "s";
+
+    // ukuran random
+    const size = Math.random() * 4 + 2; // 2 - 6 px
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    // hapus bintang setelah selesai jatuh
+    setTimeout(() => {
+      star.remove();
+    }, duration * 1000);
+  }
+
+  // bikin bintang baru tiap 200ms
+  setInterval(createStar, 200);
+</script>
+
+<style>
+  .star {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fff, 0 0 15px #fff;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+</style>
+
+</body>
+</html>
